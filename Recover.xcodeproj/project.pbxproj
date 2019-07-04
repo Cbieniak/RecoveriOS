@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		C61A8BF622CE181500A54AE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8BF522CE181500A54AE4 /* AppDelegate.swift */; };
 		C61A8BF822CE181500A54AE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8BF722CE181500A54AE4 /* SceneDelegate.swift */; };
-		C61A8BFA22CE181500A54AE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8BF922CE181500A54AE4 /* ViewController.swift */; };
+		C61A8BFA22CE181500A54AE4 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8BF922CE181500A54AE4 /* DayViewController.swift */; };
 		C61A8BFD22CE181500A54AE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61A8BFB22CE181500A54AE4 /* Main.storyboard */; };
 		C61A8C0022CE181500A54AE4 /* Recover.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C61A8BFE22CE181500A54AE4 /* Recover.xcdatamodeld */; };
 		C61A8C0222CE181700A54AE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C61A8C0122CE181700A54AE4 /* Assets.xcassets */; };
 		C61A8C0522CE181700A54AE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61A8C0322CE181700A54AE4 /* LaunchScreen.storyboard */; };
 		C61A8C1022CE181700A54AE4 /* RecoverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C0F22CE181700A54AE4 /* RecoverTests.swift */; };
+		C61A8C1C22CE1D3500A54AE4 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C1B22CE1D3500A54AE4 /* Day.swift */; };
+		C61A8C1E22CE1D6700A54AE4 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C1D22CE1D6700A54AE4 /* Plan.swift */; };
+		C61A8C2222CE1EF600A54AE4 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2122CE1EF600A54AE4 /* DayViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +34,7 @@
 		C61A8BF222CE181500A54AE4 /* Recover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61A8BF522CE181500A54AE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61A8BF722CE181500A54AE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C61A8BF922CE181500A54AE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C61A8BF922CE181500A54AE4 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		C61A8BFC22CE181500A54AE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C61A8BFF22CE181500A54AE4 /* Recover.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recover.xcdatamodel; sourceTree = "<group>"; };
 		C61A8C0122CE181700A54AE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		C61A8C0B22CE181700A54AE4 /* RecoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61A8C0F22CE181700A54AE4 /* RecoverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverTests.swift; sourceTree = "<group>"; };
 		C61A8C1122CE181700A54AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C61A8C1B22CE1D3500A54AE4 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		C61A8C1D22CE1D6700A54AE4 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		C61A8C2122CE1EF600A54AE4 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,11 @@
 		C61A8BF422CE181500A54AE4 /* Recover */ = {
 			isa = PBXGroup;
 			children = (
+				C61A8C2022CE1EE800A54AE4 /* ViewModels */,
+				C61A8C1F22CE1E9C00A54AE4 /* View */,
+				C61A8C1A22CE1D1F00A54AE4 /* Model */,
 				C61A8BF522CE181500A54AE4 /* AppDelegate.swift */,
 				C61A8BF722CE181500A54AE4 /* SceneDelegate.swift */,
-				C61A8BF922CE181500A54AE4 /* ViewController.swift */,
 				C61A8BFB22CE181500A54AE4 /* Main.storyboard */,
 				C61A8C0122CE181700A54AE4 /* Assets.xcassets */,
 				C61A8C0322CE181700A54AE4 /* LaunchScreen.storyboard */,
@@ -100,6 +108,31 @@
 				C61A8C1122CE181700A54AE4 /* Info.plist */,
 			);
 			path = RecoverTests;
+			sourceTree = "<group>";
+		};
+		C61A8C1A22CE1D1F00A54AE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C61A8C1B22CE1D3500A54AE4 /* Day.swift */,
+				C61A8C1D22CE1D6700A54AE4 /* Plan.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C61A8C1F22CE1E9C00A54AE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C61A8BF922CE181500A54AE4 /* DayViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C61A8C2022CE1EE800A54AE4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C61A8C2122CE1EF600A54AE4 /* DayViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C61A8BFA22CE181500A54AE4 /* ViewController.swift in Sources */,
+				C61A8BFA22CE181500A54AE4 /* DayViewController.swift in Sources */,
 				C61A8BF622CE181500A54AE4 /* AppDelegate.swift in Sources */,
+				C61A8C1E22CE1D6700A54AE4 /* Plan.swift in Sources */,
 				C61A8C0022CE181500A54AE4 /* Recover.xcdatamodeld in Sources */,
+				C61A8C1C22CE1D3500A54AE4 /* Day.swift in Sources */,
 				C61A8BF822CE181500A54AE4 /* SceneDelegate.swift in Sources */,
+				C61A8C2222CE1EF600A54AE4 /* DayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74C5SG6832;
 				INFOPLIST_FILE = Recover/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74C5SG6832;
 				INFOPLIST_FILE = Recover/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
