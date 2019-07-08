@@ -27,9 +27,14 @@ class DayViewController<T: DayViewModelable>: UIViewController {
         super.viewDidLoad()
         viewModel.setupCollectionView(collectionView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
 
     func configureCollectionView() -> UICollectionView {
-        let collectionView = view.addSubviewOfType { return UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()) }
+        let collectionView = view.addSubviewOfType { return UICollectionView(frame: .zero, collectionViewLayout: PeriodCollectionViewLayout()) }
         view.constrainToViews(all: collectionView)
         return collectionView
     }

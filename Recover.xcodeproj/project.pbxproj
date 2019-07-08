@@ -21,6 +21,7 @@
 		C61A8C2722CE22DC00A54AE4 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2422CE22DC00A54AE4 /* Optional+Extensions.swift */; };
 		C61A8C2822CE22DC00A54AE4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2522CE22DC00A54AE4 /* UIViewController+Extensions.swift */; };
 		C61A8C2922CE22DC00A54AE4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2622CE22DC00A54AE4 /* UIView+Extensions.swift */; };
+		C61A8C2C22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2B22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C61A8C2422CE22DC00A54AE4 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		C61A8C2522CE22DC00A54AE4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C61A8C2622CE22DC00A54AE4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		C61A8C2B22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		C61A8BF422CE181500A54AE4 /* Recover */ = {
 			isa = PBXGroup;
 			children = (
+				C61A8C2A22D1EFE300A54AE4 /* Layout */,
 				C61A8C2322CE22B200A54AE4 /* Extensions */,
 				C61A8C2022CE1EE800A54AE4 /* ViewModels */,
 				C61A8C1F22CE1E9C00A54AE4 /* View */,
@@ -150,6 +153,14 @@
 				C61A8C2522CE22DC00A54AE4 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C61A8C2A22D1EFE300A54AE4 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				C61A8C2B22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				C61A8C1C22CE1D3500A54AE4 /* Day.swift in Sources */,
 				C61A8C2722CE22DC00A54AE4 /* Optional+Extensions.swift in Sources */,
 				C61A8BF822CE181500A54AE4 /* SceneDelegate.swift in Sources */,
+				C61A8C2C22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift in Sources */,
 				C61A8C2222CE1EF600A54AE4 /* DayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
