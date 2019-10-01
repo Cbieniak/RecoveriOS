@@ -9,47 +9,30 @@
 import UIKit
 
 
-
+// A layout that contains a list of potential locations that cells can sit in.
 class PeriodCollectionViewLayout: UICollectionViewLayout {
     
-    enum PeriodLine: String {
-        case center
-        case major
-        case minor
-    
-        
-        var next: PeriodLine {
-            switch self {
-            case .center, .major:
-                return .minor
-            case .minor:
-                return .major
-            }
-        }
-    }
-    
     override var collectionViewContentSize: CGSize {
+        if let collectionView = self.collectionView {
+            let numberOfItems = collectionView.numberOfItems(inSection: 0)
+            let itemSizeHeight = (self.configuration.itemSize.height * scale) + self.configuration.spacing
+            let calculatedHeight = (CGFloat(numberOfItems) * itemSizeHeight)
+            return CGSize(width: collectionView.bounds.width, height: calculatedHeight)
+        }
         return CGSize(width: UIScreen.main.bounds.width, height: 1000)
     }
 
-    var suppCache: [UICollectionViewLayoutAttributes] = []
-    var cache: [UICollectionViewLayoutAttributes] = []
+    var cellCache: [UICollectionViewLayoutAttributes] = []
     
-    var scale: CGFloat = 1.0
+    var scale: CGFloat {
+        return configuration.scale
+    }
     
     var configuration: Configuration!
     
-    lazy var gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(adjustZoom(recognizer:)))
-
-    var initial = PeriodLine.minor
     override func prepare() {
         guard let collectionView = collectionView else { return }
         var yAmount: CGFloat = 0
-        if !(collectionView.gestureRecognizers ?? []).contains(gestureRecognizer) {
-            collectionView.addGestureRecognizer(gestureRecognizer)
-        }
-        
-        
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             
             let indexPath = IndexPath(item: item, section: 0)
@@ -58,47 +41,34 @@ class PeriodCollectionViewLayout: UICollectionViewLayout {
             var scaledItemSize = configuration.itemSize
             scaledItemSize.height *= scale
             attributes.frame = CGRect(origin: CGPoint(x: 0, y: yAmount), size: scaledItemSize)
-            cache.append(attributes)
-            yAmount = attributes.frame.maxY + configuration.spacing
+            cellCache.append(attributes)
             
+            yAmount = attributes.frame.maxY + configuration.spacing
         }
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
+        let attributesCollection = cellCache
         // Loop through the cache and look for items in the rect
-        for attributes in cache {
+        for attributes in attributesCollection {
             if attributes.frame.intersects(rect) {
                 visibleLayoutAttributes.append(attributes)
             }
         }
         
-        for attributes in suppCache {
-            if attributes.frame.intersects(rect) {
-                visibleLayoutAttributes.append(attributes)
-            }
-        }
         return visibleLayoutAttributes
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return cache[indexPath.item]
+        return cellCache[indexPath.item]
     }
     
-    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return suppCache[indexPath.item]
-    }
     
-    @objc func adjustZoom(recognizer: UIPinchGestureRecognizer) {
-        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-            self.scale *= gestureRecognizer.scale
-            gestureRecognizer.scale = 1.0
-            cache = []
-            suppCache = []
-            invalidateLayout()
-        }
+    func reset() {
+        cellCache = []
+        invalidateLayout()
     }
 
 }
@@ -107,17 +77,13 @@ extension PeriodCollectionViewLayout {
     struct Configuration {
         let spacing: CGFloat
         let itemSize: CGSize
+        var scale: CGFloat
+        
     }
 }
 
 extension UICollectionView {
-    var periodCollectionView: PeriodCollectionViewLayout? {
+    var periodCollectionViewLayout: PeriodCollectionViewLayout? {
         return self.collectionViewLayout as? PeriodCollectionViewLayout
-    }
-}
-
-extension UICollectionViewLayoutAttributes {
-    convenience init(periodLine: PeriodCollectionViewLayout.PeriodLine, with indexPath: IndexPath) {
-        self.init(forSupplementaryViewOfKind: periodLine.rawValue, with: indexPath)
     }
 }

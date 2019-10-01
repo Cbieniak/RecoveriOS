@@ -22,6 +22,8 @@
 		C61A8C2822CE22DC00A54AE4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2522CE22DC00A54AE4 /* UIViewController+Extensions.swift */; };
 		C61A8C2922CE22DC00A54AE4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2622CE22DC00A54AE4 /* UIView+Extensions.swift */; };
 		C61A8C2C22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2B22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift */; };
+		C61A8C2E22D3667200A54AE4 /* EmptyPeriodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2D22D3667200A54AE4 /* EmptyPeriodCollectionViewCell.swift */; };
+		C61A8C3022D6063100A54AE4 /* PlannedPeriodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A8C2F22D6063100A54AE4 /* PlannedPeriodCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		C61A8C2522CE22DC00A54AE4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C61A8C2622CE22DC00A54AE4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C61A8C2B22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCollectionViewLayout.swift; sourceTree = "<group>"; };
+		C61A8C2D22D3667200A54AE4 /* EmptyPeriodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPeriodCollectionViewCell.swift; sourceTree = "<group>"; };
+		C61A8C2F22D6063100A54AE4 /* PlannedPeriodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannedPeriodCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				C61A8BF922CE181500A54AE4 /* DayViewController.swift */,
+				C61A8C2D22D3667200A54AE4 /* EmptyPeriodCollectionViewCell.swift */,
+				C61A8C2F22D6063100A54AE4 /* PlannedPeriodCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,10 +277,12 @@
 				C61A8C0022CE181500A54AE4 /* Recover.xcdatamodeld in Sources */,
 				C61A8C2822CE22DC00A54AE4 /* UIViewController+Extensions.swift in Sources */,
 				C61A8C1C22CE1D3500A54AE4 /* Day.swift in Sources */,
+				C61A8C2E22D3667200A54AE4 /* EmptyPeriodCollectionViewCell.swift in Sources */,
 				C61A8C2722CE22DC00A54AE4 /* Optional+Extensions.swift in Sources */,
 				C61A8BF822CE181500A54AE4 /* SceneDelegate.swift in Sources */,
 				C61A8C2C22D1F07400A54AE4 /* PeriodCollectionViewLayout.swift in Sources */,
 				C61A8C2222CE1EF600A54AE4 /* DayViewModel.swift in Sources */,
+				C61A8C3022D6063100A54AE4 /* PlannedPeriodCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

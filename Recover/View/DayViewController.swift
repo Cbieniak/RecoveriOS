@@ -12,7 +12,12 @@ class DayViewController<T: DayViewModelable>: UIViewController {
     
     var viewModel: T
     
+    private var scale: CGFloat = 1.0
+    
     lazy var collectionView = configureCollectionView()
+    
+    lazy var gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(adjustZoom(recognizer:)))
+
     
     init(viewModel: T) {
         self.viewModel = viewModel
@@ -35,9 +40,22 @@ class DayViewController<T: DayViewModelable>: UIViewController {
 
     func configureCollectionView() -> UICollectionView {
         let collectionView = view.addSubviewOfType { return UICollectionView(frame: .zero, collectionViewLayout: PeriodCollectionViewLayout()) }
+        gestureRecognizer.cancelsTouchesInView = false
+        collectionView.addGestureRecognizer(gestureRecognizer)
         view.constrainToViews(all: collectionView)
         return collectionView
     }
+    
+    @objc func adjustZoom(recognizer: UIPinchGestureRecognizer) {
+        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+            self.scale *= gestureRecognizer.scale
+            gestureRecognizer.scale = 1.0
+            viewModel.updateScale(scale)
+            collectionView.periodCollectionViewLayout?.reset()
+        }
+    }
+    
+    
 
 }
 
